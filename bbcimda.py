@@ -16,9 +16,9 @@ now = arrow.utcnow()
 wanted = now.replace(weeks=-1)
 with urlopen("http://www.bbc.co.uk/radio/imda/imda_transports.xml") as f:
     tree = ElementTree.parse(f)
-for node in tree.find("brand/[@refid='%s']" % channel):
-    url = node
-print(url)
+for node in tree.find("brand/[@refid='%s']/transport/media[@type='dash']" % channel):
+    url = node.attrib.get("url")
+    break
 # Build the pipeline
 pipeline = Gst.parse_launch("playbin uri=%s" % url)
 
