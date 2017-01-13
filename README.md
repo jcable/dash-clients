@@ -10,5 +10,9 @@ bbcaod.py service programme
 
 For example
 
-bbcaod.py worldservice "BBC News"
-bbyaod.py radio4 "The Film Programme"
+    bbcaod.py worldservice "BBC News"
+    bbyaod.py radio4 "The Film Programme"
+
+bbcimda.py plays live streams. For example:
+
+    bbcimda.py bbc_world_service
